@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "porteria", "porteria\porteria.csproj", "{90D1D567-561C-4AE0-B011-FCE2AF6F3F34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90D1D567-561C-4AE0-B011-FCE2AF6F3F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D1D567-561C-4AE0-B011-FCE2AF6F3F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D1D567-561C-4AE0-B011-FCE2AF6F3F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D1D567-561C-4AE0-B011-FCE2AF6F3F34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86C05564-3E20-4FB8-B820-15DD9EEDB141}
+	EndGlobalSection
+EndGlobal
