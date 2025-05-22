@@ -53,8 +53,10 @@
     <Compile Include="Componentes\FormularioRedondo.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Datos\BD_Personal.cs" />
     <Compile Include="Datos\BD_Usuarios.cs" />
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Entidad\EN_Personal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +75,7 @@
     <Compile Include="IngresoTransportes.Designer.cs">
       <DependentUpon>IngresoTransportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\RN_Personal.cs" />
     <Compile Include="Negocio\RN_Usuarios.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -134,8 +137,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidad\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
