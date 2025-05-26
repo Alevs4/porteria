@@ -56,7 +56,7 @@
             this.panel2.Controls.Add(this.BtnSalir);
             this.panel2.Location = new System.Drawing.Point(-103, -10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1887, 86);
+            this.panel2.Size = new System.Drawing.Size(2032, 86);
             this.panel2.TabIndex = 3;
             // 
             // pictureBox1
@@ -74,7 +74,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(744, 29);
+            this.label1.Location = new System.Drawing.Point(846, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(420, 32);
             this.label1.TabIndex = 1;
@@ -84,7 +84,7 @@
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.White;
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(1791, 22);
+            this.BtnSalir.Location = new System.Drawing.Point(1927, 22);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(53, 46);
             this.BtnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -98,7 +98,7 @@
             this.panelFormularios.Controls.Add(this.pictureBox2);
             this.panelFormularios.Location = new System.Drawing.Point(242, 73);
             this.panelFormularios.Name = "panelFormularios";
-            this.panelFormularios.Size = new System.Drawing.Size(1542, 856);
+            this.panelFormularios.Size = new System.Drawing.Size(1684, 856);
             this.panelFormularios.TabIndex = 2;
             // 
             // pictureBox2
@@ -106,7 +106,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1542, 853);
+            this.pictureBox2.Size = new System.Drawing.Size(1684, 853);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1796, 941);
+            this.ClientSize = new System.Drawing.Size(1926, 941);
             this.Controls.Add(this.BtnReportes);
             this.Controls.Add(this.lblReloj);
             this.Controls.Add(this.lblFecha);
@@ -232,7 +232,6 @@
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

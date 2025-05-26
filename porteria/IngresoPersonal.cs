@@ -27,6 +27,7 @@ namespace porteria
         {
             ConfigurarListview();
             Cargar_Entrada_Personal();
+            BtnEditarSalida.Enabled = false;
         }
         public void Cargar_Entrada_Personal()
         {
@@ -304,6 +305,7 @@ namespace porteria
                 FechaDia.Enabled = false;
                 HoraIngreso.Enabled = false;
                 BtnRegistrar.Enabled = false;
+                BtnEditarSalida.Enabled = true;
 
             }
         }
