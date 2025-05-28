@@ -65,6 +65,7 @@
             this.BtnCancelar = new porteria.Componentes.BotoneRedondos();
             this.BtnEditarSalida = new porteria.Componentes.BotoneRedondos();
             this.BtnRegistrarTransporte = new porteria.Componentes.BotoneRedondos();
+            this.LblIdTransp = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -418,6 +419,7 @@
             this.ListaTransporte.Size = new System.Drawing.Size(889, 513);
             this.ListaTransporte.TabIndex = 169;
             this.ListaTransporte.UseCompatibleStateImageBehavior = false;
+            this.ListaTransporte.SelectedIndexChanged += new System.EventHandler(this.ListaTransporte_SelectedIndexChanged);
             // 
             // BtnCancelar
             // 
@@ -438,6 +440,7 @@
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextColor = System.Drawing.Color.White;
             this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnEditarSalida
             // 
@@ -458,6 +461,7 @@
             this.BtnEditarSalida.Text = "Editar Hora Salida";
             this.BtnEditarSalida.TextColor = System.Drawing.Color.White;
             this.BtnEditarSalida.UseVisualStyleBackColor = false;
+            this.BtnEditarSalida.Click += new System.EventHandler(this.BtnEditarSalida_Click);
             // 
             // BtnRegistrarTransporte
             // 
@@ -479,11 +483,22 @@
             this.BtnRegistrarTransporte.UseVisualStyleBackColor = false;
             this.BtnRegistrarTransporte.Click += new System.EventHandler(this.BtnRegistrarTransporte_Click);
             // 
+            // LblIdTransp
+            // 
+            this.LblIdTransp.AutoSize = true;
+            this.LblIdTransp.Location = new System.Drawing.Point(17, 87);
+            this.LblIdTransp.Name = "LblIdTransp";
+            this.LblIdTransp.Size = new System.Drawing.Size(51, 16);
+            this.LblIdTransp.TabIndex = 170;
+            this.LblIdTransp.Text = "label16";
+            this.LblIdTransp.Visible = false;
+            // 
             // IngresoTransportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1688, 882);
+            this.Controls.Add(this.LblIdTransp);
             this.Controls.Add(this.ListaTransporte);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
@@ -569,5 +584,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListView ListaTransporte;
+        private System.Windows.Forms.Label LblIdTransp;
     }
 }

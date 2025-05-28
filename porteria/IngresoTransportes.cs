@@ -55,7 +55,7 @@ namespace porteria
                 per.Area = TxtArea.Text;
                 per.Responsable = TxtRecepcion.Text;
                 per.Fecha = Convert.ToDateTime(Fecha.Text);
-                per.HoraEntrada = Hoingreso.Text;
+                per.HoraEntrada =Convert.ToDateTime(Hoingreso.Text);
                 per.GuiaEntrada = TxtGuiaEntrada.Text;
                 per.DetalleEntrada = TxtDetalleEntrada.Text;
                 per.GuiaSalida = TxtGuiaSalida.Text;
@@ -68,6 +68,35 @@ namespace porteria
                 {
 
                     MessageBox.Show("Persona Agregada Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cargar_Entrada_Transportes();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void Guardar_Salida_Transportes_Planta()
+        {
+
+            RN_Transportes obj = new RN_Transportes();
+            EN_Transportes per = new EN_Transportes();
+
+            try
+            {
+                per.Id_transporte =Convert.ToInt32(LblIdTransp.Text);
+                per.HoraSalida=Convert.ToDateTime( HoSalida.Text);
+                per.GuiaSalida = TxtGuiaSalida.Text;
+                per.DetalleSalida = TxtDetalleSalida.Text;
+
+                obj.RN_Registrar_Salida_Transporte(per);
+
+                if (BD_Transportes.Guardar == true)
+                {
+
+                    MessageBox.Show("Salida Agregada Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Cargar_Entrada_Transportes();
 
                 }
@@ -240,6 +269,7 @@ namespace porteria
                 MessageBox.Show("Rut OK");
 
                 Guardar_Entrada_Transportes_Planta();
+                Limpiar();
             }
            
         }
@@ -248,6 +278,10 @@ namespace porteria
         {
             ConfigurarListview();
             Cargar_Entrada_Transportes();
+            BtnEditarSalida.Enabled = false;
+            TxtGuiaSalida.Enabled = false;
+            TxtDetalleSalida.Enabled = false;
+            HoSalida.Enabled = false;
         }
         private string formatoRut(string rut)
         {
@@ -312,6 +346,180 @@ namespace porteria
             {
                 Cargar_Entrada_Transportes();
             }
+        }
+        public void Limpiar()
+        {
+            TxtNombreChofer.Text = "";
+            TxtRut.Text = "";
+            TxtPatente.Text = "";
+            TxtPatenteCarro.Text = "";
+            TxtArea.Text = "";
+            TxtRecepcion.Text = "";
+            Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            Hoingreso.Text = DateTime.Now.ToString("HH:mm");
+            HoSalida.Text = DateTime.Now.ToString("HH:mm");
+            TxtGuiaEntrada.Text = "";
+            TxtDetalleEntrada.Text = "";
+            TxtGuiaSalida.Text = "";
+            TxtDetalleSalida.Text = "";
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            TxtRut.Enabled = true;
+            TxtNombreChofer.Enabled = true;
+            Fecha.Enabled = true;
+            Hoingreso.Enabled = true;
+            TxtPatente.Enabled = true;
+            TxtPatenteCarro.Enabled = true;
+            TxtArea.Enabled =true;
+            TxtRecepcion.Enabled = true;
+            TxtGuiaEntrada.Enabled = true;
+            TxtDetalleEntrada.Enabled =true;
+            TxtGuiaSalida.Enabled = true;
+            TxtDetalleSalida.Enabled = true;
+            BtnRegistrarTransporte.Enabled = true;
+            BtnEditarSalida.Enabled = false;
+        }
+
+        private void ListaTransporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListaTransporte.SelectedItems.Count > 0)
+            {
+                ListViewItem item = ListaTransporte.SelectedItems[0];
+
+                // Por ejemplo, mostrar la primera columna en el TextBox
+                LblIdTransp.Text = item.SubItems[0].Text;
+                TxtRut.Text = item.SubItems[2].Text;
+                TxtNombreChofer.Text = item.SubItems[1].Text;
+                TxtPatente.Text = item.SubItems[3].Text;
+                TxtPatenteCarro.Text = item.SubItems[4].Text;
+                TxtArea.Text = item.SubItems[5].Text;
+                TxtRecepcion.Text = item.SubItems[6].Text;
+                Fecha.Text = item.SubItems[7].Text;
+                Hoingreso.Text = item.SubItems[8].Text;
+                TxtGuiaEntrada.Text = item.SubItems[10].Text;
+                TxtDetalleEntrada.Text = item.SubItems[11].Text;
+                TxtGuiaSalida.Text = item.SubItems[12].Text;
+                TxtDetalleSalida.Text = item.SubItems[13].Text;
+
+                TxtRut.Enabled = false;
+                TxtNombreChofer.Enabled = false;
+                Fecha.Enabled = false;
+                Hoingreso.Enabled = false;
+                HoSalida.Enabled = true;
+                TxtPatente.Enabled = false;
+                TxtPatenteCarro.Enabled = false;
+                TxtArea.Enabled = false;
+                TxtRecepcion.Enabled = false;
+                TxtGuiaEntrada.Enabled = false;
+                TxtDetalleEntrada.Enabled = false;
+                TxtGuiaSalida.Enabled = true;
+                TxtDetalleSalida.Enabled = true;
+                BtnRegistrarTransporte.Enabled = false;
+                BtnEditarSalida.Enabled = true;
+
+            }
+        }
+
+        private void BtnEditarSalida_Click(object sender, EventArgs e)
+        {
+            if (TxtNombreChofer.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtNombreChofer.Focus();
+                return;
+            }
+            if (TxtRut.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Rut", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtRut.Focus();
+                return;
+            }
+            if (TxtPatente.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Patente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtPatente.Focus();
+                return;
+            }
+            if (TxtPatenteCarro.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Patente Carro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtPatenteCarro.Focus();
+                return;
+            }
+            if (TxtArea.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Area", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtArea.Focus();
+                return;
+            }
+            if (TxtRecepcion.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Responsable de Recepcion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtRecepcion.Focus();
+                return;
+            }
+            if (Fecha.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Fecha", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Fecha.Focus();
+                return;
+            }
+            if (Hoingreso.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Hora de Ingreso", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Hoingreso.Focus();
+                return;
+            }
+            if (HoSalida.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Hora de Salida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                HoSalida.Focus();
+                return;
+            }
+            if (TxtGuiaEntrada.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Guia de Entrada", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtGuiaEntrada.Focus();
+                return;
+            }
+            if (TxtDetalleEntrada.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Detalle de Entrada", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtDetalleEntrada.Focus();
+                return;
+            }
+            if (TxtGuiaSalida.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Guia de Salida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtGuiaSalida.Focus();
+                return;
+            }
+            if (TxtDetalleSalida.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese Detalle de Salida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtDetalleSalida.Focus();
+                return;
+            }
+            Guardar_Salida_Transportes_Planta();
+            Cargar_Entrada_Transportes();
+            Limpiar();
+            TxtRut.Enabled = true;
+            TxtNombreChofer.Enabled = true;
+            Fecha.Enabled = true;
+            Hoingreso.Enabled = true;
+            TxtPatente.Enabled = true;
+            TxtPatenteCarro.Enabled = true;
+            TxtArea.Enabled = true;
+            TxtRecepcion.Enabled = true;
+            TxtGuiaEntrada.Enabled = true;
+            TxtDetalleEntrada.Enabled = true;
+            TxtGuiaSalida.Enabled = true;
+            TxtDetalleSalida.Enabled = true;
+            BtnRegistrarTransporte.Enabled = true;
+            BtnEditarSalida.Enabled = false;
         }
     }
 }

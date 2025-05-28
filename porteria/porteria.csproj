@@ -56,9 +56,11 @@
     <Compile Include="Datos\BD_Personal.cs" />
     <Compile Include="Datos\BD_Transportes.cs" />
     <Compile Include="Datos\BD_Usuarios.cs" />
+    <Compile Include="Datos\BD_Visitas.cs" />
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Entidad\EN_Personal.cs" />
     <Compile Include="Entidad\EN_Transportes.cs" />
+    <Compile Include="Entidad\EN_Visitas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +82,7 @@
     <Compile Include="Negocio\RN_Personal.cs" />
     <Compile Include="Negocio\RN_Transportes.cs" />
     <Compile Include="Negocio\RN_Usuarios.cs" />
+    <Compile Include="Negocio\RN_Visitas.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>

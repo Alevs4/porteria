@@ -28,42 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
-            this.TxxtBuscarHerramienta = new System.Windows.Forms.TextBox();
+            this.TxxtBuscarVisita = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.DataHerr = new System.Windows.Forms.DataGridView();
-            this.TxtNumFac = new System.Windows.Forms.TextBox();
+            this.TxtGuardia = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Fecha = new System.Windows.Forms.DateTimePicker();
             this.lab = new System.Windows.Forms.Label();
-            this.TxtRecepcion = new System.Windows.Forms.TextBox();
+            this.TxtEmpresa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TxtCantidad = new System.Windows.Forms.TextBox();
+            this.TxtRecepciona = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtProv = new System.Windows.Forms.TextBox();
+            this.TxtPatente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TxtDesHerramienta = new System.Windows.Forms.TextBox();
+            this.TxtRut = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtHerramienta = new System.Windows.Forms.TextBox();
+            this.TxtNombreVisitante = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.HoSalida = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HoIngreso = new System.Windows.Forms.DateTimePicker();
+            this.TxtObservaciones = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Acompañantes = new System.Windows.Forms.Panel();
+            this.TxtAcompañante4 = new System.Windows.Forms.TextBox();
+            this.TxtAcompañante3 = new System.Windows.Forms.TextBox();
+            this.TxtAcompañante2 = new System.Windows.Forms.TextBox();
+            this.TxtAcompañante1 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.botoneRedondos3 = new porteria.Componentes.BotoneRedondos();
-            this.botoneRedondos2 = new porteria.Componentes.BotoneRedondos();
-            this.botoneRedondos1 = new porteria.Componentes.BotoneRedondos();
-            ((System.ComponentModel.ISupportInitialize)(this.DataHerr)).BeginInit();
+            this.CheckAcompañantes = new System.Windows.Forms.CheckBox();
+            this.BtnCancelar = new porteria.Componentes.BotoneRedondos();
+            this.BtnEditarSalida = new porteria.Componentes.BotoneRedondos();
+            this.BtnRegistrar = new porteria.Componentes.BotoneRedondos();
+            this.ListaVisitas = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
+            this.Acompañantes.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -76,13 +82,13 @@
             this.label9.TabIndex = 112;
             this.label9.Text = "Buscar";
             // 
-            // TxxtBuscarHerramienta
+            // TxxtBuscarVisita
             // 
-            this.TxxtBuscarHerramienta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxxtBuscarHerramienta.Location = new System.Drawing.Point(849, 100);
-            this.TxxtBuscarHerramienta.Name = "TxxtBuscarHerramienta";
-            this.TxxtBuscarHerramienta.Size = new System.Drawing.Size(370, 27);
-            this.TxxtBuscarHerramienta.TabIndex = 111;
+            this.TxxtBuscarVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxxtBuscarVisita.Location = new System.Drawing.Point(849, 100);
+            this.TxxtBuscarVisita.Name = "TxxtBuscarVisita";
+            this.TxxtBuscarVisita.Size = new System.Drawing.Size(370, 27);
+            this.TxxtBuscarVisita.TabIndex = 111;
             // 
             // btnCerrar
             // 
@@ -91,7 +97,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1416, 81);
+            this.btnCerrar.Location = new System.Drawing.Point(1359, 81);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(163, 42);
@@ -101,57 +107,13 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // DataHerr
+            // TxtGuardia
             // 
-            this.DataHerr.AllowUserToAddRows = false;
-            this.DataHerr.AllowUserToDeleteRows = false;
-            this.DataHerr.AllowUserToResizeColumns = false;
-            this.DataHerr.AllowUserToResizeRows = false;
-            this.DataHerr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataHerr.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataHerr.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataHerr.BackgroundColor = System.Drawing.Color.White;
-            this.DataHerr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataHerr.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataHerr.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DataHerr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataHerr.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataHerr.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DataHerr.EnableHeadersVisualStyles = false;
-            this.DataHerr.Location = new System.Drawing.Point(834, 183);
-            this.DataHerr.MultiSelect = false;
-            this.DataHerr.Name = "DataHerr";
-            this.DataHerr.ReadOnly = true;
-            this.DataHerr.RowHeadersVisible = false;
-            this.DataHerr.RowHeadersWidth = 51;
-            this.DataHerr.RowTemplate.Height = 24;
-            this.DataHerr.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataHerr.Size = new System.Drawing.Size(778, 523);
-            this.DataHerr.TabIndex = 94;
-            // 
-            // TxtNumFac
-            // 
-            this.TxtNumFac.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.TxtNumFac.Location = new System.Drawing.Point(237, 569);
-            this.TxtNumFac.Name = "TxtNumFac";
-            this.TxtNumFac.Size = new System.Drawing.Size(226, 29);
-            this.TxtNumFac.TabIndex = 109;
+            this.TxtGuardia.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.TxtGuardia.Location = new System.Drawing.Point(237, 569);
+            this.TxtGuardia.Name = "TxtGuardia";
+            this.TxtGuardia.Size = new System.Drawing.Size(226, 29);
+            this.TxtGuardia.TabIndex = 109;
             // 
             // label8
             // 
@@ -193,15 +155,15 @@
             this.lab.TabIndex = 105;
             this.lab.Text = "Fecha";
             // 
-            // TxtRecepcion
+            // TxtEmpresa
             // 
-            this.TxtRecepcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRecepcion.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtRecepcion.Location = new System.Drawing.Point(237, 327);
-            this.TxtRecepcion.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtRecepcion.Name = "TxtRecepcion";
-            this.TxtRecepcion.Size = new System.Drawing.Size(492, 29);
-            this.TxtRecepcion.TabIndex = 99;
+            this.TxtEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtEmpresa.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtEmpresa.Location = new System.Drawing.Point(237, 327);
+            this.TxtEmpresa.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtEmpresa.Name = "TxtEmpresa";
+            this.TxtEmpresa.Size = new System.Drawing.Size(492, 29);
+            this.TxtEmpresa.TabIndex = 99;
             // 
             // label6
             // 
@@ -214,15 +176,15 @@
             this.label6.TabIndex = 104;
             this.label6.Text = "Empresa Proviene";
             // 
-            // TxtCantidad
+            // TxtRecepciona
             // 
-            this.TxtCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtCantidad.Location = new System.Drawing.Point(237, 391);
-            this.TxtCantidad.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(492, 29);
-            this.TxtCantidad.TabIndex = 98;
+            this.TxtRecepciona.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRecepciona.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtRecepciona.Location = new System.Drawing.Point(237, 391);
+            this.TxtRecepciona.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtRecepciona.Name = "TxtRecepciona";
+            this.TxtRecepciona.Size = new System.Drawing.Size(492, 29);
+            this.TxtRecepciona.TabIndex = 98;
             // 
             // label5
             // 
@@ -231,19 +193,19 @@
             this.label5.Location = new System.Drawing.Point(36, 395);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.Size = new System.Drawing.Size(190, 20);
             this.label5.TabIndex = 103;
-            this.label5.Text = "Quien Recibe";
+            this.label5.Text = "Responsable Recepcion";
             // 
-            // TxtProv
+            // TxtPatente
             // 
-            this.TxtProv.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtProv.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtProv.Location = new System.Drawing.Point(237, 269);
-            this.TxtProv.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtProv.Name = "TxtProv";
-            this.TxtProv.Size = new System.Drawing.Size(143, 29);
-            this.TxtProv.TabIndex = 97;
+            this.TxtPatente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPatente.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtPatente.Location = new System.Drawing.Point(237, 269);
+            this.TxtPatente.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtPatente.Name = "TxtPatente";
+            this.TxtPatente.Size = new System.Drawing.Size(143, 29);
+            this.TxtPatente.TabIndex = 97;
             // 
             // label4
             // 
@@ -256,15 +218,15 @@
             this.label4.TabIndex = 102;
             this.label4.Text = "Patente";
             // 
-            // TxtDesHerramienta
+            // TxtRut
             // 
-            this.TxtDesHerramienta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDesHerramienta.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtDesHerramienta.Location = new System.Drawing.Point(237, 210);
-            this.TxtDesHerramienta.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtDesHerramienta.Name = "TxtDesHerramienta";
-            this.TxtDesHerramienta.Size = new System.Drawing.Size(143, 29);
-            this.TxtDesHerramienta.TabIndex = 96;
+            this.TxtRut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRut.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtRut.Location = new System.Drawing.Point(237, 210);
+            this.TxtRut.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtRut.Name = "TxtRut";
+            this.TxtRut.Size = new System.Drawing.Size(143, 29);
+            this.TxtRut.TabIndex = 96;
             // 
             // label3
             // 
@@ -277,15 +239,15 @@
             this.label3.TabIndex = 101;
             this.label3.Text = "Rut";
             // 
-            // TxtHerramienta
+            // TxtNombreVisitante
             // 
-            this.TxtHerramienta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtHerramienta.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtHerramienta.Location = new System.Drawing.Point(237, 149);
-            this.TxtHerramienta.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtHerramienta.Name = "TxtHerramienta";
-            this.TxtHerramienta.Size = new System.Drawing.Size(492, 29);
-            this.TxtHerramienta.TabIndex = 95;
+            this.TxtNombreVisitante.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNombreVisitante.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtNombreVisitante.Location = new System.Drawing.Point(237, 149);
+            this.TxtNombreVisitante.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtNombreVisitante.Name = "TxtNombreVisitante";
+            this.TxtNombreVisitante.Size = new System.Drawing.Size(492, 29);
+            this.TxtNombreVisitante.TabIndex = 95;
             // 
             // label2
             // 
@@ -312,11 +274,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(520, 9);
+            this.label1.Location = new System.Drawing.Point(618, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(525, 32);
+            this.label1.Size = new System.Drawing.Size(364, 32);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Control de Ingreso a las Instalaciones";
+            this.label1.Text = "Control de Ingreso Visitas";
             // 
             // label10
             // 
@@ -329,14 +291,14 @@
             this.label10.TabIndex = 121;
             this.label10.Text = "Hora Salida";
             // 
-            // dateTimePicker2
+            // HoSalida
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(237, 510);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(163, 24);
-            this.dateTimePicker2.TabIndex = 120;
+            this.HoSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.HoSalida.Location = new System.Drawing.Point(237, 510);
+            this.HoSalida.Name = "HoSalida";
+            this.HoSalida.Size = new System.Drawing.Size(163, 24);
+            this.HoSalida.TabIndex = 120;
             // 
             // label11
             // 
@@ -349,162 +311,260 @@
             this.label11.TabIndex = 119;
             this.label11.Text = "Hora Ingreso";
             // 
-            // dateTimePicker1
+            // HoIngreso
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(237, 456);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 24);
-            this.dateTimePicker1.TabIndex = 118;
+            this.HoIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.HoIngreso.Location = new System.Drawing.Point(237, 456);
+            this.HoIngreso.Name = "HoIngreso";
+            this.HoIngreso.Size = new System.Drawing.Size(163, 24);
+            this.HoIngreso.TabIndex = 118;
             // 
-            // textBox1
+            // TxtObservaciones
             // 
-            this.textBox1.Location = new System.Drawing.Point(486, 470);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 227);
-            this.textBox1.TabIndex = 122;
+            this.TxtObservaciones.Location = new System.Drawing.Point(500, 456);
+            this.TxtObservaciones.Multiline = true;
+            this.TxtObservaciones.Name = "TxtObservaciones";
+            this.TxtObservaciones.Size = new System.Drawing.Size(306, 227);
+            this.TxtObservaciones.TabIndex = 122;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(569, 433);
+            this.label12.Location = new System.Drawing.Point(587, 424);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(121, 20);
             this.label12.TabIndex = 123;
             this.label12.Text = "Observaciones";
             // 
-            // comboBox1
+            // Acompañantes
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "EXTERNO",
-            "CONTRATISTA",
-            "VISITA"});
-            this.comboBox1.Location = new System.Drawing.Point(525, 213);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 26);
-            this.comboBox1.TabIndex = 127;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Acompañantes.BackColor = System.Drawing.Color.White;
+            this.Acompañantes.Controls.Add(this.TxtAcompañante4);
+            this.Acompañantes.Controls.Add(this.TxtAcompañante3);
+            this.Acompañantes.Controls.Add(this.TxtAcompañante2);
+            this.Acompañantes.Controls.Add(this.TxtAcompañante1);
+            this.Acompañantes.Controls.Add(this.lbl1);
+            this.Acompañantes.Controls.Add(this.label15);
+            this.Acompañantes.Controls.Add(this.label14);
+            this.Acompañantes.Controls.Add(this.label13);
+            this.Acompañantes.Location = new System.Drawing.Point(758, 153);
+            this.Acompañantes.Name = "Acompañantes";
+            this.Acompañantes.Size = new System.Drawing.Size(593, 267);
+            this.Acompañantes.TabIndex = 127;
+            // 
+            // TxtAcompañante4
+            // 
+            this.TxtAcompañante4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante4.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante4.Location = new System.Drawing.Point(215, 190);
+            this.TxtAcompañante4.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante4.Name = "TxtAcompañante4";
+            this.TxtAcompañante4.Size = new System.Drawing.Size(337, 29);
+            this.TxtAcompañante4.TabIndex = 108;
+            // 
+            // TxtAcompañante3
+            // 
+            this.TxtAcompañante3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante3.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante3.Location = new System.Drawing.Point(215, 131);
+            this.TxtAcompañante3.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante3.Name = "TxtAcompañante3";
+            this.TxtAcompañante3.Size = new System.Drawing.Size(337, 29);
+            this.TxtAcompañante3.TabIndex = 107;
+            // 
+            // TxtAcompañante2
+            // 
+            this.TxtAcompañante2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante2.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante2.Location = new System.Drawing.Point(213, 72);
+            this.TxtAcompañante2.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante2.Name = "TxtAcompañante2";
+            this.TxtAcompañante2.Size = new System.Drawing.Size(339, 29);
+            this.TxtAcompañante2.TabIndex = 106;
+            // 
+            // TxtAcompañante1
+            // 
+            this.TxtAcompañante1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante1.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante1.Location = new System.Drawing.Point(215, 16);
+            this.TxtAcompañante1.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante1.Name = "TxtAcompañante1";
+            this.TxtAcompañante1.Size = new System.Drawing.Size(337, 29);
+            this.TxtAcompañante1.TabIndex = 105;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(8, 194);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(189, 20);
+            this.lbl1.TabIndex = 104;
+            this.lbl1.Text = "Nombre Acompañante 4";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(8, 76);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(189, 20);
+            this.label15.TabIndex = 103;
+            this.label15.Text = "Nombre Acompañante 2";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(8, 135);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(189, 20);
+            this.label14.TabIndex = 102;
+            this.label14.Text = "Nombre Acompañante 3";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(440, 215);
+            this.label13.Location = new System.Drawing.Point(8, 20);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 20);
-            this.label13.TabIndex = 128;
-            this.label13.Text = "Tipo";
+            this.label13.Size = new System.Drawing.Size(189, 20);
+            this.label13.TabIndex = 101;
+            this.label13.Text = "Nombre Acompañante 1";
             // 
-            // botoneRedondos3
+            // CheckAcompañantes
             // 
-            this.botoneRedondos3.BackColor = System.Drawing.Color.Gray;
-            this.botoneRedondos3.BackgroundColor = System.Drawing.Color.Gray;
-            this.botoneRedondos3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.botoneRedondos3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botoneRedondos3.BorderRadius = 15;
-            this.botoneRedondos3.BorderSize = 0;
-            this.botoneRedondos3.FlatAppearance.BorderSize = 0;
-            this.botoneRedondos3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botoneRedondos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botoneRedondos3.ForeColor = System.Drawing.Color.White;
-            this.botoneRedondos3.Location = new System.Drawing.Point(623, 764);
-            this.botoneRedondos3.Name = "botoneRedondos3";
-            this.botoneRedondos3.Size = new System.Drawing.Size(169, 59);
-            this.botoneRedondos3.TabIndex = 126;
-            this.botoneRedondos3.Text = "Cancelar";
-            this.botoneRedondos3.TextColor = System.Drawing.Color.White;
-            this.botoneRedondos3.UseVisualStyleBackColor = false;
-            this.botoneRedondos3.Click += new System.EventHandler(this.botoneRedondos3_Click);
+            this.CheckAcompañantes.AutoSize = true;
+            this.CheckAcompañantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckAcompañantes.Location = new System.Drawing.Point(436, 216);
+            this.CheckAcompañantes.Name = "CheckAcompañantes";
+            this.CheckAcompañantes.Size = new System.Drawing.Size(142, 24);
+            this.CheckAcompañantes.TabIndex = 128;
+            this.CheckAcompañantes.Text = "Acompañantes";
+            this.CheckAcompañantes.UseVisualStyleBackColor = true;
+            this.CheckAcompañantes.CheckedChanged += new System.EventHandler(this.CheckAcompañantes_CheckedChanged);
             // 
-            // botoneRedondos2
+            // BtnCancelar
             // 
-            this.botoneRedondos2.BackColor = System.Drawing.Color.Teal;
-            this.botoneRedondos2.BackgroundColor = System.Drawing.Color.Teal;
-            this.botoneRedondos2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.botoneRedondos2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botoneRedondos2.BorderRadius = 15;
-            this.botoneRedondos2.BorderSize = 0;
-            this.botoneRedondos2.FlatAppearance.BorderSize = 0;
-            this.botoneRedondos2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botoneRedondos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botoneRedondos2.ForeColor = System.Drawing.Color.White;
-            this.botoneRedondos2.Location = new System.Drawing.Point(351, 764);
-            this.botoneRedondos2.Name = "botoneRedondos2";
-            this.botoneRedondos2.Size = new System.Drawing.Size(180, 59);
-            this.botoneRedondos2.TabIndex = 125;
-            this.botoneRedondos2.Text = "Editar Hora Salida";
-            this.botoneRedondos2.TextColor = System.Drawing.Color.White;
-            this.botoneRedondos2.UseVisualStyleBackColor = false;
+            this.BtnCancelar.BackColor = System.Drawing.Color.Gray;
+            this.BtnCancelar.BackgroundColor = System.Drawing.Color.Gray;
+            this.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnCancelar.BorderRadius = 15;
+            this.BtnCancelar.BorderSize = 0;
+            this.BtnCancelar.FlatAppearance.BorderSize = 0;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.Location = new System.Drawing.Point(623, 764);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(169, 59);
+            this.BtnCancelar.TabIndex = 126;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.TextColor = System.Drawing.Color.White;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.botoneRedondos3_Click);
             // 
-            // botoneRedondos1
+            // BtnEditarSalida
             // 
-            this.botoneRedondos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.botoneRedondos1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.botoneRedondos1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botoneRedondos1.BorderRadius = 15;
-            this.botoneRedondos1.BorderSize = 0;
-            this.botoneRedondos1.FlatAppearance.BorderSize = 0;
-            this.botoneRedondos1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botoneRedondos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botoneRedondos1.ForeColor = System.Drawing.Color.White;
-            this.botoneRedondos1.Location = new System.Drawing.Point(80, 764);
-            this.botoneRedondos1.Name = "botoneRedondos1";
-            this.botoneRedondos1.Size = new System.Drawing.Size(177, 59);
-            this.botoneRedondos1.TabIndex = 124;
-            this.botoneRedondos1.Text = "Registrar";
-            this.botoneRedondos1.TextColor = System.Drawing.Color.White;
-            this.botoneRedondos1.UseVisualStyleBackColor = false;
+            this.BtnEditarSalida.BackColor = System.Drawing.Color.Teal;
+            this.BtnEditarSalida.BackgroundColor = System.Drawing.Color.Teal;
+            this.BtnEditarSalida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnEditarSalida.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnEditarSalida.BorderRadius = 15;
+            this.BtnEditarSalida.BorderSize = 0;
+            this.BtnEditarSalida.FlatAppearance.BorderSize = 0;
+            this.BtnEditarSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditarSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditarSalida.ForeColor = System.Drawing.Color.White;
+            this.BtnEditarSalida.Location = new System.Drawing.Point(351, 764);
+            this.BtnEditarSalida.Name = "BtnEditarSalida";
+            this.BtnEditarSalida.Size = new System.Drawing.Size(180, 59);
+            this.BtnEditarSalida.TabIndex = 125;
+            this.BtnEditarSalida.Text = "Editar Hora Salida";
+            this.BtnEditarSalida.TextColor = System.Drawing.Color.White;
+            this.BtnEditarSalida.UseVisualStyleBackColor = false;
+            // 
+            // BtnRegistrar
+            // 
+            this.BtnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BtnRegistrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BtnRegistrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnRegistrar.BorderRadius = 15;
+            this.BtnRegistrar.BorderSize = 0;
+            this.BtnRegistrar.FlatAppearance.BorderSize = 0;
+            this.BtnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.BtnRegistrar.Location = new System.Drawing.Point(80, 764);
+            this.BtnRegistrar.Name = "BtnRegistrar";
+            this.BtnRegistrar.Size = new System.Drawing.Size(177, 59);
+            this.BtnRegistrar.TabIndex = 124;
+            this.BtnRegistrar.Text = "Registrar";
+            this.BtnRegistrar.TextColor = System.Drawing.Color.White;
+            this.BtnRegistrar.UseVisualStyleBackColor = false;
+            this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // ListaVisitas
+            // 
+            this.ListaVisitas.HideSelection = false;
+            this.ListaVisitas.Location = new System.Drawing.Point(830, 153);
+            this.ListaVisitas.Name = "ListaVisitas";
+            this.ListaVisitas.Size = new System.Drawing.Size(814, 516);
+            this.ListaVisitas.TabIndex = 129;
+            this.ListaVisitas.UseCompatibleStateImageBehavior = false;
             // 
             // RegistroIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1720, 907);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.botoneRedondos3);
-            this.Controls.Add(this.botoneRedondos2);
-            this.Controls.Add(this.botoneRedondos1);
+            this.ClientSize = new System.Drawing.Size(1663, 885);
+            this.Controls.Add(this.Acompañantes);
+            this.Controls.Add(this.ListaVisitas);
+            this.Controls.Add(this.CheckAcompañantes);
+            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.BtnEditarSalida);
+            this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtObservaciones);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.HoSalida);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.HoIngreso);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.TxxtBuscarHerramienta);
+            this.Controls.Add(this.TxxtBuscarVisita);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.DataHerr);
-            this.Controls.Add(this.TxtNumFac);
+            this.Controls.Add(this.TxtGuardia);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Fecha);
             this.Controls.Add(this.lab);
-            this.Controls.Add(this.TxtRecepcion);
+            this.Controls.Add(this.TxtEmpresa);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.TxtCantidad);
+            this.Controls.Add(this.TxtRecepciona);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TxtProv);
+            this.Controls.Add(this.TxtPatente);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TxtDesHerramienta);
+            this.Controls.Add(this.TxtRut);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtHerramienta);
+            this.Controls.Add(this.TxtNombreVisitante);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistroIngreso";
             this.Text = "RegistroIngreso";
-            ((System.ComponentModel.ISupportInitialize)(this.DataHerr)).EndInit();
+            this.Load += new System.EventHandler(this.RegistroIngreso_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.Acompañantes.ResumeLayout(false);
+            this.Acompañantes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,36 +573,44 @@
         #endregion
 
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TxxtBuscarHerramienta;
+        private System.Windows.Forms.TextBox TxxtBuscarVisita;
         internal System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.DataGridView DataHerr;
-        private System.Windows.Forms.TextBox TxtNumFac;
+        private System.Windows.Forms.TextBox TxtGuardia;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker Fecha;
         private System.Windows.Forms.Label lab;
-        private System.Windows.Forms.TextBox TxtRecepcion;
+        private System.Windows.Forms.TextBox TxtEmpresa;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtCantidad;
+        private System.Windows.Forms.TextBox TxtRecepciona;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtProv;
+        private System.Windows.Forms.TextBox TxtPatente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtDesHerramienta;
+        private System.Windows.Forms.TextBox TxtRut;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtHerramienta;
+        private System.Windows.Forms.TextBox TxtNombreVisitante;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker HoSalida;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker HoIngreso;
+        private System.Windows.Forms.TextBox TxtObservaciones;
         private System.Windows.Forms.Label label12;
-        private Componentes.BotoneRedondos botoneRedondos3;
-        private Componentes.BotoneRedondos botoneRedondos2;
-        private Componentes.BotoneRedondos botoneRedondos1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private Componentes.BotoneRedondos BtnCancelar;
+        private Componentes.BotoneRedondos BtnEditarSalida;
+        private Componentes.BotoneRedondos BtnRegistrar;
+        private System.Windows.Forms.Panel Acompañantes;
+        private System.Windows.Forms.CheckBox CheckAcompañantes;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox TxtAcompañante4;
+        private System.Windows.Forms.TextBox TxtAcompañante3;
+        private System.Windows.Forms.TextBox TxtAcompañante2;
+        private System.Windows.Forms.TextBox TxtAcompañante1;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListView ListaVisitas;
     }
 }

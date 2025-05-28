@@ -53,7 +53,7 @@ namespace porteria
                 per.Nombres = TxtNombrePersonal.Text;
                 per.Rut = TxtRut.Text;
                 per.Fecha = Convert.ToDateTime(FechaDia.Text);
-                per.HoraIngreso = HoraIngreso.Text;
+                per.HoraIngreso =Convert.ToDateTime(HoraIngreso.Text);
           
      
                 obj.RN_Ingreso_Personal_Planta(per);
@@ -81,7 +81,7 @@ namespace porteria
             try
             {
                 per.Idpersonal = Convert.ToInt32(LblId.Text);
-                per.HoraSalida = HoraSalida.Text;
+                per.HoraSalida =Convert.ToDateTime(HoraSalida.Text);
 
 
                 obj.RN_Editar_Hora_Estado_Personal_Planta(per);

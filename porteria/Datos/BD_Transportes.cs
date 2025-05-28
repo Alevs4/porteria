@@ -52,6 +52,38 @@ namespace porteria.Datos
                 MessageBox.Show("Algo Malo Pasó" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        public void BD_Registrar_Salida_Transporte(EN_Transportes transporte)
+        {
+            SqlConnection cn = new SqlConnection(Conectar());
+            SqlCommand cmd = new SqlCommand("SP_REGISTRO_SALIDA_TRANSPORTES_PLANTA", cn);
+            try
+            {
+                cmd.CommandTimeout = 20;
+                cmd.CommandType = CommandType.StoredProcedure;
+                //agregamos los parametros del precedimiento de almacenado
+                cmd.Parameters.AddWithValue("@Id", transporte.Id_transporte);
+                cmd.Parameters.AddWithValue("@Salida", transporte.HoraSalida);
+                cmd.Parameters.AddWithValue("@GuiaSalida", transporte.GuiaSalida);
+                cmd.Parameters.AddWithValue("@DetalleSalida", transporte.DetalleSalida);
+
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+                Guardar = true;
+
+            }
+            catch (Exception ex)
+            {
+                Guardar = false;
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+                MessageBox.Show("Algo Malo Pasó" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
         public DataTable BD_Leer_Entrada_Transportes()
         {
             SqlConnection cn = new SqlConnection();

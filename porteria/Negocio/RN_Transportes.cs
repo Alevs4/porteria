@@ -27,5 +27,10 @@ namespace porteria.Negocio
             BD_Transportes obj = new BD_Transportes();
             return obj.BD_Leer_Entrada_Transportes_XValor(rut);
         }
+        public void RN_Registrar_Salida_Transporte(EN_Transportes transporte)
+        {
+            BD_Transportes obj = new BD_Transportes();
+            obj.BD_Registrar_Salida_Transporte(transporte);
+        }
     }
 }

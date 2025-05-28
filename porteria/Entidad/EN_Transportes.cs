@@ -16,8 +16,8 @@ namespace porteria.Entidad
         string patenteCarro;
         string area;
         string responsable;
-        string horaEntrada;
-        string horaSalida;
+        DateTime horaEntrada;
+        DateTime horaSalida;
         string guiaEntrada;
         string guiaSalida;
         string detalleEntrada;
@@ -31,8 +31,8 @@ namespace porteria.Entidad
         public string PatenteCarro { get => patenteCarro; set => patenteCarro = value; }
         public string Area { get => area; set => area = value; }
         public string Responsable { get => responsable; set => responsable = value; }
-        public string HoraEntrada { get => horaEntrada; set => horaEntrada = value; }
-        public string HoraSalida { get => horaSalida; set => horaSalida = value; }
+        public DateTime HoraEntrada { get => horaEntrada; set => horaEntrada = value; }
+        public DateTime HoraSalida { get => horaSalida; set => horaSalida = value; }
         public string GuiaEntrada { get => guiaEntrada; set => guiaEntrada = value; }
         public string GuiaSalida { get => guiaSalida; set => guiaSalida = value; }
         public string DetalleEntrada { get => detalleEntrada; set => detalleEntrada = value; }
