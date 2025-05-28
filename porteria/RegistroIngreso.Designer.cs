@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label9 = new System.Windows.Forms.Label();
-            this.TxxtBuscarVisita = new System.Windows.Forms.TextBox();
+            this.TxtBuscarVisita = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.TxtGuardia = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.BtnEditarSalida = new porteria.Componentes.BotoneRedondos();
             this.BtnRegistrar = new porteria.Componentes.BotoneRedondos();
             this.ListaVisitas = new System.Windows.Forms.ListView();
+            this.LblId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.Acompañantes.SuspendLayout();
             this.SuspendLayout();
@@ -82,13 +83,14 @@
             this.label9.TabIndex = 112;
             this.label9.Text = "Buscar";
             // 
-            // TxxtBuscarVisita
+            // TxtBuscarVisita
             // 
-            this.TxxtBuscarVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxxtBuscarVisita.Location = new System.Drawing.Point(849, 100);
-            this.TxxtBuscarVisita.Name = "TxxtBuscarVisita";
-            this.TxxtBuscarVisita.Size = new System.Drawing.Size(370, 27);
-            this.TxxtBuscarVisita.TabIndex = 111;
+            this.TxtBuscarVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBuscarVisita.Location = new System.Drawing.Point(849, 100);
+            this.TxtBuscarVisita.Name = "TxtBuscarVisita";
+            this.TxtBuscarVisita.Size = new System.Drawing.Size(370, 27);
+            this.TxtBuscarVisita.TabIndex = 111;
+            this.TxtBuscarVisita.TextChanged += new System.EventHandler(this.TxxtBuscarVisita_TextChanged);
             // 
             // btnCerrar
             // 
@@ -520,12 +522,23 @@
             this.ListaVisitas.Size = new System.Drawing.Size(814, 516);
             this.ListaVisitas.TabIndex = 129;
             this.ListaVisitas.UseCompatibleStateImageBehavior = false;
+            this.ListaVisitas.SelectedIndexChanged += new System.EventHandler(this.ListaVisitas_SelectedIndexChanged);
+            // 
+            // LblId
+            // 
+            this.LblId.AutoSize = true;
+            this.LblId.Location = new System.Drawing.Point(530, 103);
+            this.LblId.Name = "LblId";
+            this.LblId.Size = new System.Drawing.Size(0, 20);
+            this.LblId.TabIndex = 130;
+            this.LblId.Visible = false;
             // 
             // RegistroIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1663, 885);
+            this.Controls.Add(this.LblId);
             this.Controls.Add(this.Acompañantes);
             this.Controls.Add(this.ListaVisitas);
             this.Controls.Add(this.CheckAcompañantes);
@@ -539,7 +552,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.HoIngreso);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.TxxtBuscarVisita);
+            this.Controls.Add(this.TxtBuscarVisita);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.TxtGuardia);
             this.Controls.Add(this.label8);
@@ -573,7 +586,7 @@
         #endregion
 
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TxxtBuscarVisita;
+        private System.Windows.Forms.TextBox TxtBuscarVisita;
         internal System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.TextBox TxtGuardia;
         private System.Windows.Forms.Label label8;
@@ -612,5 +625,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListView ListaVisitas;
+        private System.Windows.Forms.Label LblId;
     }
 }

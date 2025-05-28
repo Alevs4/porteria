@@ -21,5 +21,10 @@ namespace porteria.Negocio
             BD_Visitas bd = new BD_Visitas();
             return bd.BD_Leer_Entrada_Visitas();
         }
+        public DataTable RN_Leer_Entrada_Visitas_Valor(string rut)
+        {
+            BD_Visitas bd = new BD_Visitas();
+            return bd.BD_Leer_Entrada_Visitas_Valor(rut);
+        }
     }
 }

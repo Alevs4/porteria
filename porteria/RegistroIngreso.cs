@@ -28,19 +28,34 @@ namespace porteria
 
         private void botoneRedondos3_Click(object sender, EventArgs e)
         {
+            limp_Entrada_Visitas();
+            TxtRut.Enabled = true;
+            TxtNombreVisitante.Enabled = true;
+            Fecha.Enabled = true;
+            HoIngreso.Enabled = true;
+            HoSalida.Enabled = false;
+            TxtPatente.Enabled = true;
+            TxtEmpresa.Enabled = true;
+            TxtRecepciona.Enabled = true;
+            BtnRegistrar.Enabled = true;
+            BtnEditarSalida.Enabled = false;
+            CheckAcompañantes.Enabled = true;
+            TxtGuardia.Enabled = true;
+            TxtObservaciones.Enabled = true;
+            Acompañantes.Visible = false;
+            TxtRut.BackColor = Color.White;
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void RegistroIngreso_Load(object sender, EventArgs e)
         {
             Acompañantes.Visible = false;
             ConfigurarListview();
-            Cargar_Entrada_Visitas();
+            Cargar_Entrada_Visitas(); 
+            BtnEditarSalida.Enabled = false;
+            HoSalida.Enabled = false;
         }
 
         private void CheckAcompañantes_CheckedChanged(object sender, EventArgs e)
@@ -57,7 +72,13 @@ namespace porteria
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-      
+            if(TxtRut.Text == "")
+            {
+                MessageBox.Show("Por favor, ingrese el RUT del visitante.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtRut.Focus();
+                return;
+            }
+
             bool respuesta = false;
             string rut = TxtRut.Text;
             TxtRut.Text = formatoRut(rut);
@@ -169,8 +190,9 @@ namespace porteria
                 {
 
                     MessageBox.Show("Persona Agregada Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Cargar_Entrada_Transportes();
-
+                    Cargar_Entrada_Visitas();
+                    limp_Entrada_Visitas();
+                    Acompañantes.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -237,6 +259,80 @@ namespace porteria
                 LlenarListview(dt);
             }
 
+        }
+        public void Cargar_Entrada_Visitas_Valor(string rut)
+        {
+            RN_Visitas obj = new RN_Visitas();
+            DataTable dt = new DataTable();
+
+            dt = obj.RN_Leer_Entrada_Visitas_Valor(rut);
+            if (dt.Rows.Count > 0)
+            {
+                LlenarListview(dt);
+            }
+
+        }
+        private void limp_Entrada_Visitas()
+        {
+            TxtNombreVisitante.Text = string.Empty;
+            TxtRut.Text = string.Empty;
+            TxtPatente.Text = string.Empty;
+            TxtEmpresa.Text = string.Empty;
+            TxtRecepciona.Text = string.Empty;
+            Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            HoIngreso.Text = DateTime.Now.ToString("HH:mm");
+            TxtGuardia.Text = string.Empty;
+      
+        }
+
+        private void TxxtBuscarVisita_TextChanged(object sender, EventArgs e)
+        {
+
+            if (TxtBuscarVisita.Text.Trim().Length > 1)
+            {
+                Cargar_Entrada_Visitas_Valor(TxtBuscarVisita.Text.Trim());
+            }
+            else
+            {
+                Cargar_Entrada_Visitas();
+            }
+        }
+
+        private void ListaVisitas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (ListaVisitas.SelectedItems.Count > 0)
+            {
+                ListViewItem item = ListaVisitas.SelectedItems[0];
+
+                LblId.Text = item.SubItems[0].Text;
+                TxtNombreVisitante.Text = item.SubItems[1].Text;
+                TxtRut.Text = item.SubItems[2].Text;
+                TxtPatente.Text = item.SubItems[3].Text;
+                TxtEmpresa.Text = item.SubItems[4].Text;
+                TxtRecepciona.Text = item.SubItems[5].Text;
+                Fecha.Text = item.SubItems[6].Text;
+                HoIngreso.Text = item.SubItems[7].Text;
+                TxtGuardia.Text = item.SubItems[9].Text;
+          
+
+
+                TxtRut.Enabled = false;
+                TxtNombreVisitante.Enabled = false;
+                Fecha.Enabled = false;
+                HoIngreso.Enabled = false;
+                HoSalida.Enabled = true;
+                TxtPatente.Enabled = false;
+                TxtEmpresa.Enabled = false;
+                TxtRecepciona.Enabled = false;
+                Fecha.Enabled = false;
+                BtnRegistrar.Enabled = false;
+                BtnEditarSalida.Enabled = true;
+                CheckAcompañantes.Enabled = false;
+                TxtGuardia.Enabled = false;
+                TxtObservaciones.Enabled = false;
+            }
+         
         }
     }
 }
