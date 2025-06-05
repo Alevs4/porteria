@@ -54,6 +54,35 @@ namespace porteria.Datos
                 MessageBox.Show("Algo Malo Pasó" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        public void BD_Registrar_Salida_Visitas(EN_Visitas visitas)
+        {
+            SqlConnection cn = new SqlConnection(Conectar());
+            SqlCommand cmd = new SqlCommand("SP_REGISTRO_SALIDA_VISITAS_PLANTA", cn);
+            try
+            {
+                cmd.CommandTimeout = 20;
+                cmd.CommandType = CommandType.StoredProcedure;
+                //agregamos los parametros del precedimiento de almacenado
+                cmd.Parameters.AddWithValue("@Id", visitas.Id_Visitas);
+                cmd.Parameters.AddWithValue("@Salida", visitas.HoraSalida);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+                Guardar = true;
+
+            }
+            catch (Exception ex)
+            {
+                Guardar = false;
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+                MessageBox.Show("Algo Malo Pasó" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
         public DataTable BD_Leer_Entrada_Visitas()
         {
             SqlConnection cn = new SqlConnection();

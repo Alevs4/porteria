@@ -22,6 +22,10 @@ namespace porteria.Entidad
         string guiaSalida;
         string detalleEntrada;
         string detalleSalida;
+        string acompañante1;
+        string acompañante2;
+        string acompañante3;
+        string acompañante4;
 
         public int Id_transporte { get => id_transporte; set => id_transporte = value; }
         public string Rut { get => rut; set => rut = value; }
@@ -37,5 +41,9 @@ namespace porteria.Entidad
         public string GuiaSalida { get => guiaSalida; set => guiaSalida = value; }
         public string DetalleEntrada { get => detalleEntrada; set => detalleEntrada = value; }
         public string DetalleSalida { get => detalleSalida; set => detalleSalida = value; }
+        public string Acompañante1 { get => acompañante1; set => acompañante1 = value; }
+        public string Acompañante2 { get => acompañante2; set => acompañante2 = value; }
+        public string Acompañante3 { get => acompañante3; set => acompañante3 = value; }
+        public string Acompañante4 { get => acompañante4; set => acompañante4 = value; }
     }
 }

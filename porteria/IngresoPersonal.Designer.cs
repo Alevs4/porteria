@@ -45,11 +45,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.HoraSalida = new System.Windows.Forms.DateTimePicker();
             this.ListaIngresoPer = new System.Windows.Forms.ListView();
+            this.LblId = new System.Windows.Forms.Label();
+            this.BtnActualizar = new porteria.Componentes.BotoneRedondos();
             this.BtnCancelar = new porteria.Componentes.BotoneRedondos();
             this.BtnEditarSalida = new porteria.Componentes.BotoneRedondos();
             this.BtnRegistrar = new porteria.Componentes.BotoneRedondos();
             this.BtnSalir = new porteria.Componentes.BotoneRedondos();
-            this.LblId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(2068, 70);
+            this.btnCerrar.Location = new System.Drawing.Point(2138, 70);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(99, 42);
@@ -91,7 +92,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 621);
+            this.label7.Location = new System.Drawing.Point(404, 686);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(721, 16);
             this.label7.TabIndex = 106;
@@ -226,10 +227,40 @@
             this.ListaIngresoPer.HideSelection = false;
             this.ListaIngresoPer.Location = new System.Drawing.Point(754, 146);
             this.ListaIngresoPer.Name = "ListaIngresoPer";
-            this.ListaIngresoPer.Size = new System.Drawing.Size(759, 491);
+            this.ListaIngresoPer.Size = new System.Drawing.Size(822, 491);
             this.ListaIngresoPer.TabIndex = 121;
             this.ListaIngresoPer.UseCompatibleStateImageBehavior = false;
             this.ListaIngresoPer.SelectedIndexChanged += new System.EventHandler(this.ListaIngresoPer_SelectedIndexChanged);
+            // 
+            // LblId
+            // 
+            this.LblId.AutoSize = true;
+            this.LblId.Location = new System.Drawing.Point(31, 97);
+            this.LblId.Name = "LblId";
+            this.LblId.Size = new System.Drawing.Size(0, 16);
+            this.LblId.TabIndex = 122;
+            this.LblId.Visible = false;
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnActualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnActualizar.BorderRadius = 15;
+            this.BtnActualizar.BorderSize = 0;
+            this.BtnActualizar.FlatAppearance.BorderSize = 0;
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Location = new System.Drawing.Point(582, 260);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(150, 60);
+            this.BtnActualizar.TabIndex = 123;
+            this.BtnActualizar.Text = "Actualizar Lista";
+            this.BtnActualizar.TextColor = System.Drawing.Color.White;
+            this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnCancelar
             // 
@@ -313,20 +344,12 @@
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // LblId
-            // 
-            this.LblId.AutoSize = true;
-            this.LblId.Location = new System.Drawing.Point(31, 97);
-            this.LblId.Name = "LblId";
-            this.LblId.Size = new System.Drawing.Size(0, 20);
-            this.LblId.TabIndex = 122;
-            this.LblId.Visible = false;
-            // 
             // IngresoPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1542, 772);
+            this.ClientSize = new System.Drawing.Size(1612, 772);
+            this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.LblId);
             this.Controls.Add(this.ListaIngresoPer);
             this.Controls.Add(this.BtnCancelar);
@@ -383,5 +406,6 @@
         private Componentes.BotoneRedondos BtnCancelar;
         private System.Windows.Forms.ListView ListaIngresoPer;
         private System.Windows.Forms.Label LblId;
+        private Componentes.BotoneRedondos BtnActualizar;
     }
 }

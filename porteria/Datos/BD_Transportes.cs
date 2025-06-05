@@ -34,6 +34,10 @@ namespace porteria.Datos
                 cmd.Parameters.AddWithValue("@DetalleEntrada", transporte.DetalleEntrada);
                 cmd.Parameters.AddWithValue("@GuiaSalida", transporte.GuiaSalida);
                 cmd.Parameters.AddWithValue("@DetalleSalida", transporte.DetalleSalida);
+                cmd.Parameters.AddWithValue("@Acompañante1", transporte.Acompañante1);
+                cmd.Parameters.AddWithValue("@Acompañante2", transporte.Acompañante2);
+                cmd.Parameters.AddWithValue("@Acompañante3", transporte.Acompañante3);
+                cmd.Parameters.AddWithValue("@Acompañante4", transporte.Acompañante4);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();

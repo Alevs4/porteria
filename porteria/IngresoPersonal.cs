@@ -28,6 +28,7 @@ namespace porteria
             ConfigurarListview();
             Cargar_Entrada_Personal();
             BtnEditarSalida.Enabled = false;
+            HoraSalida.Enabled = false;
         }
         public void Cargar_Entrada_Personal()
         {
@@ -90,6 +91,17 @@ namespace porteria
                 {
 
                     MessageBox.Show("Salida Agregada Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TxtRut.Enabled = true;
+                    TxtRut.BackColor = Color.White;
+                    TxtNombrePersonal.Enabled = true;
+                    FechaDia.Enabled = true;
+                    HoraIngreso.Enabled = true;
+                    BtnRegistrar.Enabled = true;
+                    HoraSalida.Enabled = false;
+                    BtnEditarSalida.Enabled = false;
+                    TxtRut.Text = "";
+                    TxtNombrePersonal.Text = "";
+                    LblId.Text = "";
                     Cargar_Entrada_Personal();
 
                 }
@@ -122,23 +134,21 @@ namespace porteria
                 return;
             }
             Guardar_Salida_Personal_Planta();
-            TxtRut.Enabled = true;
-            TxtNombrePersonal.Enabled = true;
-            FechaDia.Enabled = true;
-            HoraIngreso.Enabled = true;
-            BtnRegistrar.Enabled = true;
-            TxtRut.Text = "";
-            TxtNombrePersonal.Text = "";
-            LblId.Text = "";
+            
+    
+           
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             TxtRut.Enabled = true;
+            TxtRut.ForeColor = Color.White;
             TxtNombrePersonal.Enabled = true;
             FechaDia.Enabled = true;
             HoraIngreso.Enabled = true;
             BtnRegistrar.Enabled = true;
+            HoraSalida.Enabled = false;
+            BtnEditarSalida.Enabled = false;
             TxtRut.Text = "";
             TxtNombrePersonal.Text = "";
             LblId.Text = "";
@@ -220,6 +230,16 @@ namespace porteria
                 MessageBox.Show("Rut OK");
 
                 Guardar_Entrada_Personal_Planta();
+                TxtRut.Enabled = true;
+                TxtRut.BackColor = Color.White;
+                TxtNombrePersonal.Enabled = true;
+                FechaDia.Enabled = true;
+                HoraIngreso.Enabled = true;
+                BtnRegistrar.Enabled = true;
+                TxtRut.Text = "";
+                TxtNombrePersonal.Text = "";
+                LblId.Text = "";
+
             }
         }
 
@@ -304,10 +324,18 @@ namespace porteria
                 TxtNombrePersonal.Enabled = false;
                 FechaDia.Enabled = false;
                 HoraIngreso.Enabled = false;
+                HoraSalida.Enabled = true;
                 BtnRegistrar.Enabled = false;
                 BtnEditarSalida.Enabled = true;
 
             }
         }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            ConfigurarListview();
+            Cargar_Entrada_Personal();
+        }
     }
+    
 }

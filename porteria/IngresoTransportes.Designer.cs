@@ -66,7 +66,19 @@
             this.BtnEditarSalida = new porteria.Componentes.BotoneRedondos();
             this.BtnRegistrarTransporte = new porteria.Componentes.BotoneRedondos();
             this.LblIdTransp = new System.Windows.Forms.Label();
+            this.BtnActualizar = new porteria.Componentes.BotoneRedondos();
+            this.CheckAcompañantes = new System.Windows.Forms.CheckBox();
+            this.Acompañantes = new System.Windows.Forms.Panel();
+            this.TxtAcompañante4 = new System.Windows.Forms.TextBox();
+            this.TxtAcompañante3 = new System.Windows.Forms.TextBox();
+            this.TxtAcompañante2 = new System.Windows.Forms.TextBox();
+            this.TxtAcompañante1 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.Acompañantes.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
@@ -493,11 +505,146 @@
             this.LblIdTransp.Text = "label16";
             this.LblIdTransp.Visible = false;
             // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnActualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnActualizar.BorderRadius = 15;
+            this.BtnActualizar.BorderSize = 0;
+            this.BtnActualizar.FlatAppearance.BorderSize = 0;
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Location = new System.Drawing.Point(975, 750);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(150, 60);
+            this.BtnActualizar.TabIndex = 171;
+            this.BtnActualizar.Text = "Actualizar Lista";
+            this.BtnActualizar.TextColor = System.Drawing.Color.White;
+            this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
+            // 
+            // CheckAcompañantes
+            // 
+            this.CheckAcompañantes.AutoSize = true;
+            this.CheckAcompañantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckAcompañantes.Location = new System.Drawing.Point(493, 238);
+            this.CheckAcompañantes.Name = "CheckAcompañantes";
+            this.CheckAcompañantes.Size = new System.Drawing.Size(142, 24);
+            this.CheckAcompañantes.TabIndex = 180;
+            this.CheckAcompañantes.Text = "Acompañantes";
+            this.CheckAcompañantes.UseVisualStyleBackColor = true;
+            this.CheckAcompañantes.CheckedChanged += new System.EventHandler(this.CheckAcompañantes_CheckedChanged);
+            // 
+            // Acompañantes
+            // 
+            this.Acompañantes.Controls.Add(this.TxtAcompañante4);
+            this.Acompañantes.Controls.Add(this.TxtAcompañante3);
+            this.Acompañantes.Controls.Add(this.TxtAcompañante2);
+            this.Acompañantes.Controls.Add(this.TxtAcompañante1);
+            this.Acompañantes.Controls.Add(this.lbl1);
+            this.Acompañantes.Controls.Add(this.label16);
+            this.Acompañantes.Controls.Add(this.label17);
+            this.Acompañantes.Controls.Add(this.label18);
+            this.Acompañantes.Location = new System.Drawing.Point(720, 190);
+            this.Acompañantes.Name = "Acompañantes";
+            this.Acompañantes.Size = new System.Drawing.Size(607, 285);
+            this.Acompañantes.TabIndex = 181;
+            // 
+            // TxtAcompañante4
+            // 
+            this.TxtAcompañante4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante4.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante4.Location = new System.Drawing.Point(255, 205);
+            this.TxtAcompañante4.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante4.Name = "TxtAcompañante4";
+            this.TxtAcompañante4.Size = new System.Drawing.Size(337, 29);
+            this.TxtAcompañante4.TabIndex = 187;
+            // 
+            // TxtAcompañante3
+            // 
+            this.TxtAcompañante3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante3.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante3.Location = new System.Drawing.Point(257, 141);
+            this.TxtAcompañante3.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante3.Name = "TxtAcompañante3";
+            this.TxtAcompañante3.Size = new System.Drawing.Size(337, 29);
+            this.TxtAcompañante3.TabIndex = 186;
+            // 
+            // TxtAcompañante2
+            // 
+            this.TxtAcompañante2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante2.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante2.Location = new System.Drawing.Point(255, 79);
+            this.TxtAcompañante2.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante2.Name = "TxtAcompañante2";
+            this.TxtAcompañante2.Size = new System.Drawing.Size(339, 29);
+            this.TxtAcompañante2.TabIndex = 185;
+            // 
+            // TxtAcompañante1
+            // 
+            this.TxtAcompañante1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAcompañante1.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtAcompañante1.Location = new System.Drawing.Point(255, 23);
+            this.TxtAcompañante1.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAcompañante1.Name = "TxtAcompañante1";
+            this.TxtAcompañante1.Size = new System.Drawing.Size(337, 29);
+            this.TxtAcompañante1.TabIndex = 184;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(15, 209);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(189, 20);
+            this.lbl1.TabIndex = 183;
+            this.lbl1.Text = "Nombre Acompañante 4";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(15, 83);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(189, 20);
+            this.label16.TabIndex = 182;
+            this.label16.Text = "Nombre Acompañante 2";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(15, 145);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(189, 20);
+            this.label17.TabIndex = 181;
+            this.label17.Text = "Nombre Acompañante 3";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(15, 27);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(189, 20);
+            this.label18.TabIndex = 180;
+            this.label18.Text = "Nombre Acompañante 1";
+            // 
             // IngresoTransportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1688, 882);
+            this.Controls.Add(this.Acompañantes);
+            this.Controls.Add(this.CheckAcompañantes);
+            this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.LblIdTransp);
             this.Controls.Add(this.ListaTransporte);
             this.Controls.Add(this.label15);
@@ -541,6 +688,8 @@
             this.Load += new System.EventHandler(this.IngresoTransportes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.Acompañantes.ResumeLayout(false);
+            this.Acompañantes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -585,5 +734,16 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListView ListaTransporte;
         private System.Windows.Forms.Label LblIdTransp;
+        private Componentes.BotoneRedondos BtnActualizar;
+        private System.Windows.Forms.CheckBox CheckAcompañantes;
+        private System.Windows.Forms.Panel Acompañantes;
+        private System.Windows.Forms.TextBox TxtAcompañante4;
+        private System.Windows.Forms.TextBox TxtAcompañante3;
+        private System.Windows.Forms.TextBox TxtAcompañante2;
+        private System.Windows.Forms.TextBox TxtAcompañante1;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

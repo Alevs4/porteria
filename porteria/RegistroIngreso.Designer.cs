@@ -69,6 +69,7 @@
             this.BtnRegistrar = new porteria.Componentes.BotoneRedondos();
             this.ListaVisitas = new System.Windows.Forms.ListView();
             this.LblId = new System.Windows.Forms.Label();
+            this.BtnActualizar = new porteria.Componentes.BotoneRedondos();
             this.panel1.SuspendLayout();
             this.Acompañantes.SuspendLayout();
             this.SuspendLayout();
@@ -493,6 +494,7 @@
             this.BtnEditarSalida.Text = "Editar Hora Salida";
             this.BtnEditarSalida.TextColor = System.Drawing.Color.White;
             this.BtnEditarSalida.UseVisualStyleBackColor = false;
+            this.BtnEditarSalida.Click += new System.EventHandler(this.BtnEditarSalida_Click);
             // 
             // BtnRegistrar
             // 
@@ -529,15 +531,37 @@
             this.LblId.AutoSize = true;
             this.LblId.Location = new System.Drawing.Point(530, 103);
             this.LblId.Name = "LblId";
-            this.LblId.Size = new System.Drawing.Size(0, 20);
+            this.LblId.Size = new System.Drawing.Size(0, 16);
             this.LblId.TabIndex = 130;
             this.LblId.Visible = false;
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnActualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnActualizar.BorderRadius = 15;
+            this.BtnActualizar.BorderSize = 0;
+            this.BtnActualizar.FlatAppearance.BorderSize = 0;
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Location = new System.Drawing.Point(892, 763);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(150, 60);
+            this.BtnActualizar.TabIndex = 172;
+            this.BtnActualizar.Text = "Actualizar Lista";
+            this.BtnActualizar.TextColor = System.Drawing.Color.White;
+            this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // RegistroIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1663, 885);
+            this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.LblId);
             this.Controls.Add(this.Acompañantes);
             this.Controls.Add(this.ListaVisitas);
@@ -626,5 +650,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListView ListaVisitas;
         private System.Windows.Forms.Label LblId;
+        private Componentes.BotoneRedondos BtnActualizar;
     }
 }

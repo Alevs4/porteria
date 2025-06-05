@@ -60,6 +60,10 @@ namespace porteria
                 per.DetalleEntrada = TxtDetalleEntrada.Text;
                 per.GuiaSalida = TxtGuiaSalida.Text;
                 per.DetalleSalida = TxtDetalleSalida.Text;
+                per.Acompañante1 = TxtAcompañante1.Text;
+                per.Acompañante2 = TxtAcompañante2.Text;
+                per.Acompañante3 = TxtAcompañante3.Text;
+                per.Acompañante4 = TxtAcompañante4.Text;
 
 
                 obj.RN_Registrar_Entrada_Transporte(per);
@@ -233,18 +237,7 @@ namespace porteria
                 TxtDetalleEntrada.Focus();
                 return;
             }
-            if (TxtGuiaSalida.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese Guia de Salida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtGuiaSalida.Focus();
-                return;
-            }
-            if (TxtDetalleSalida.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese Detalle de Salida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtDetalleSalida.Focus();
-                return;
-            }
+      
 
 
             bool respuesta = false;
@@ -282,6 +275,7 @@ namespace porteria
             TxtGuiaSalida.Enabled = false;
             TxtDetalleSalida.Enabled = false;
             HoSalida.Enabled = false;
+            Acompañantes.Visible = false;
         }
         private string formatoRut(string rut)
         {
@@ -351,6 +345,7 @@ namespace porteria
         {
             TxtNombreChofer.Text = "";
             TxtRut.Text = "";
+            TxtRut.BackColor = Color.White;
             TxtPatente.Text = "";
             TxtPatenteCarro.Text = "";
             TxtArea.Text = "";
@@ -362,6 +357,10 @@ namespace porteria
             TxtDetalleEntrada.Text = "";
             TxtGuiaSalida.Text = "";
             TxtDetalleSalida.Text = "";
+            TxtAcompañante1.Text = "";
+            TxtAcompañante2.Text = "";
+            TxtAcompañante3.Text = "";
+            TxtAcompañante4.Text = "";
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -377,10 +376,13 @@ namespace porteria
             TxtRecepcion.Enabled = true;
             TxtGuiaEntrada.Enabled = true;
             TxtDetalleEntrada.Enabled =true;
-            TxtGuiaSalida.Enabled = true;
-            TxtDetalleSalida.Enabled = true;
+            TxtGuiaSalida.Enabled = false;
+            TxtDetalleSalida.Enabled = false;
             BtnRegistrarTransporte.Enabled = true;
             BtnEditarSalida.Enabled = false;
+            CheckAcompañantes.Checked = false;
+            Acompañantes.Visible = false;
+            HoSalida.Enabled = false;
         }
 
         private void ListaTransporte_SelectedIndexChanged(object sender, EventArgs e)
@@ -419,6 +421,9 @@ namespace porteria
                 TxtDetalleSalida.Enabled = true;
                 BtnRegistrarTransporte.Enabled = false;
                 BtnEditarSalida.Enabled = true;
+                TxtRut.BackColor = Color.White;
+                CheckAcompañantes.Checked = false;
+                CheckAcompañantes.Enabled = false;
 
             }
         }
@@ -507,6 +512,7 @@ namespace porteria
             Cargar_Entrada_Transportes();
             Limpiar();
             TxtRut.Enabled = true;
+            TxtRut.BackColor = Color.White;
             TxtNombreChofer.Enabled = true;
             Fecha.Enabled = true;
             Hoingreso.Enabled = true;
@@ -520,6 +526,25 @@ namespace porteria
             TxtDetalleSalida.Enabled = true;
             BtnRegistrarTransporte.Enabled = true;
             BtnEditarSalida.Enabled = false;
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            ConfigurarListview();
+            Cargar_Entrada_Transportes();
+        }
+
+        private void CheckAcompañantes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckAcompañantes.Checked)
+            {
+                Acompañantes.Visible = true;
+            }
+            else
+            {
+                Acompañantes.Visible = false;
+            }
+
         }
     }
 }

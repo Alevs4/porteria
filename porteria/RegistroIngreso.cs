@@ -184,7 +184,7 @@ namespace porteria
                 per.Observaciones = TxtObservaciones.Text;
 
 
-                obj.BD_Registrar_Entrada_Visitas(per);
+                obj.RN_Registrar_Entrada_Visitas(per);
 
                 if (BD_Visitas.Guardar == true)
                 {
@@ -192,7 +192,9 @@ namespace porteria
                     MessageBox.Show("Persona Agregada Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Cargar_Entrada_Visitas();
                     limp_Entrada_Visitas();
+                    TxtRut.BackColor = Color.White;
                     Acompañantes.Visible = false;
+                    CheckAcompañantes.Checked = false;
                 }
             }
             catch (Exception ex)
@@ -282,7 +284,14 @@ namespace porteria
             Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             HoIngreso.Text = DateTime.Now.ToString("HH:mm");
             TxtGuardia.Text = string.Empty;
-      
+            HoSalida.Text = string.Empty;
+            TxtAcompañante1.Text = string.Empty;
+            TxtAcompañante2.Text = string.Empty;
+            TxtAcompañante3.Text = string.Empty;
+            TxtAcompañante4.Text = string.Empty;
+            TxtObservaciones.Text = string.Empty;
+            LblId.Text = string.Empty;
+
         }
 
         private void TxxtBuscarVisita_TextChanged(object sender, EventArgs e)
@@ -331,8 +340,72 @@ namespace porteria
                 CheckAcompañantes.Enabled = false;
                 TxtGuardia.Enabled = false;
                 TxtObservaciones.Enabled = false;
+
             }
          
+        }
+
+        private void BtnEditarSalida_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(HoSalida.Text))
+            {
+                MessageBox.Show("Por favor, ingrese la hora de salida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                HoSalida.Focus();
+                return;
+            }
+
+            Guardar_Salida_Visitas_Planta();
+            limp_Entrada_Visitas();
+            TxtRut.Enabled = true;
+            TxtNombreVisitante.Enabled = true;
+            Fecha.Enabled = true;
+            HoIngreso.Enabled = true;
+            HoSalida.Enabled = false;
+            TxtPatente.Enabled = true;
+            TxtEmpresa.Enabled = true;
+            TxtRecepciona.Enabled = true;
+            BtnRegistrar.Enabled = true;
+            BtnEditarSalida.Enabled = false;
+            CheckAcompañantes.Enabled = true;
+            TxtGuardia.Enabled = true;
+            TxtObservaciones.Enabled = true;
+            Acompañantes.Visible = false;
+
+
+        }
+        private void Guardar_Salida_Visitas_Planta()
+        {
+
+            RN_Visitas obj = new RN_Visitas();
+            EN_Visitas per = new EN_Visitas();
+
+            try
+            {
+                per.Id_Visitas = Convert.ToInt32(LblId.Text);
+                per.HoraSalida = Convert.ToDateTime(HoSalida.Text);
+
+                obj.RN_Registrar_Salida_Visitas(per);
+
+                if (BD_Visitas.Guardar == true)
+                {
+
+                    MessageBox.Show("Persona Agregada Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cargar_Entrada_Visitas();
+                    limp_Entrada_Visitas();
+                    Acompañantes.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            ConfigurarListview();
+            Cargar_Entrada_Visitas();
         }
     }
 }
